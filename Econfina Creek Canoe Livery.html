@@ -1,0 +1,1321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://canoeeconfinacreek.net/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Econfina Creek Canoe Livery</title>
+<script async="" src="./Econfina Creek Canoe Livery_files/analytics.js.download"></script><script src="./Econfina Creek Canoe Livery_files/jquery.min.js.download"></script>
+<script type="text/javascript" style="display:none">
+<!--
+/* =========================================================
+
+// jquery.innerfade.js
+
+// Datum: 2008-02-14
+// Firma: Medienfreunde Hofmann & Baldes GbR
+// Author: Torsten Baldes
+// Mail: t.baldes@medienfreunde.com
+// Web: http://medienfreunde.com
+
+// based on the work of Matt Oakes http://portfolio.gizone.co.uk/applications/slideshow/
+// and Ralf S. Engelschall http://trainofthoughts.org/
+
+ *
+ *  <ul id="news"> 
+ *      <li>content 1</li>
+ *      <li>content 2</li>
+ *      <li>content 3</li>
+ *  </ul>
+ *  
+ *  $('#news').innerfade({ 
+ *	  animationtype: Type of animation 'fade' or 'slide' (Default: 'fade'), 
+ *	  speed: Fading-/Sliding-Speed in milliseconds or keywords (slow, normal or fast) (Default: 'normal'), 
+ *	  timeout: Time between the fades in milliseconds (Default: '2000'), 
+ *	  type: Type of slideshow: 'sequence', 'random' or 'random_start' (Default: 'sequence'), 
+ * 		containerheight: Height of the containing element in any css-height-value (Default: 'auto'),
+ *	  runningclass: CSS-Class which the container get’s applied (Default: 'innerfade'),
+ *	  children: optional children selector (Default: null)
+ *  }); 
+ *
+
+// ========================================================= */
+
+
+(function($) {
+
+    $.fn.innerfade = function(options) {
+        return this.each(function() {   
+            $.innerfade(this, options);
+        });
+    };
+
+    $.innerfade = function(container, options) {
+        var settings = {
+        		'animationtype':    'fade',
+            'speed':            'normal',
+            'type':             'sequence',
+            'timeout':          2000,
+            'containerheight':  'auto',
+            'runningclass':     'innerfade',
+            'children':         null
+        };
+        if (options)
+            $.extend(settings, options);
+        if (settings.children === null)
+            var elements = $(container).children();
+        else
+            var elements = $(container).children(settings.children);
+        if (elements.length > 1) {
+            $(container).css('position', 'relative').css('height', settings.containerheight).addClass(settings.runningclass);
+            for (var i = 0; i < elements.length; i++) {
+                $(elements[i]).css('z-index', String(elements.length-i)).css('position', 'absolute').hide();
+            };
+            if (settings.type == "sequence") {
+                setTimeout(function() {
+                    $.innerfade.next(elements, settings, 1, 0);
+                }, settings.timeout);
+                $(elements[0]).show();
+            } else if (settings.type == "random") {
+            		var last = Math.floor ( Math.random () * ( elements.length ) );
+                setTimeout(function() {
+                    do { 
+												current = Math.floor ( Math.random ( ) * ( elements.length ) );
+										} while (last == current );             
+										$.innerfade.next(elements, settings, current, last);
+                }, settings.timeout);
+                $(elements[last]).show();
+						} else if ( settings.type == 'random_start' ) {
+								settings.type = 'sequence';
+								var current = Math.floor ( Math.random () * ( elements.length ) );
+								setTimeout(function(){
+									$.innerfade.next(elements, settings, (current + 1) %  elements.length, current);
+								}, settings.timeout);
+								$(elements[current]).show();
+						}	else {
+							alert('Innerfade-Type must either be \'sequence\', \'random\' or \'random_start\'');
+						}
+				}
+    };
+
+    $.innerfade.next = function(elements, settings, current, last) {
+        if (settings.animationtype == 'slide') {
+            $(elements[last]).slideUp(settings.speed);
+            $(elements[current]).slideDown(settings.speed);
+        } else if (settings.animationtype == 'fade') {
+            $(elements[last]).fadeOut(settings.speed);
+            $(elements[current]).fadeIn(settings.speed, function() {
+							removeFilter($(this)[0]);
+						});
+        } else
+            alert('Innerfade-animationtype must either be \'slide\' or \'fade\'');
+        if (settings.type == "sequence") {
+            if ((current + 1) < elements.length) {
+                current = current + 1;
+                last = current - 1;
+            } else {
+                current = 0;
+                last = elements.length - 1;
+            }
+        } else if (settings.type == "random") {
+            last = current;
+            while (current == last)
+                current = Math.floor(Math.random() * elements.length);
+        } else
+            alert('Innerfade-Type must either be \'sequence\', \'random\' or \'random_start\'');
+        setTimeout((function() {
+            $.innerfade.next(elements, settings, current, last);
+        }), settings.timeout);
+    };
+
+})(jQuery);
+
+// **** remove Opacity-Filter in ie ****
+function removeFilter(element) {
+	if(element.style.removeAttribute){
+		element.style.removeAttribute('filter');
+	}
+}
+
+//-->
+</script>
+<script style="display:none">
+<!--
+// ColorBox v1.3.18 - a full featured, light-weight, customizable lightbox based on jQuery 1.3+
+// Copyright (c) 2011 Jack Moore - jack@colorpowered.com
+// Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+
+(function ($, document, window) {
+    var
+    // Default settings object.	
+    // See http://jacklmoore.com/colorbox for details.
+    defaults = {
+        transition: "elastic",
+        speed: 300,
+        width: false,
+        initialWidth: "600",
+        innerWidth: false,
+        maxWidth: false,
+        height: false,
+        initialHeight: "450",
+        innerHeight: false,
+        maxHeight: false,
+        scalePhotos: true,
+        scrolling: true,
+        inline: false,
+        html: false,
+        iframe: false,
+        fastIframe: true,
+        photo: false,
+        href: false,
+        title: false,
+        rel: false,
+        opacity: 0.9,
+        preloading: true,
+        current: "image {current} of {total}",
+        previous: "previous",
+        next: "next",
+        close: "close",
+        open: false,
+        returnFocus: true,
+        loop: true,
+        slideshow: false,
+        slideshowAuto: true,
+        slideshowSpeed: 2500,
+        slideshowStart: "start slideshow",
+        slideshowStop: "stop slideshow",
+        onOpen: false,
+        onLoad: false,
+        onComplete: false,
+        onCleanup: false,
+        onClosed: false,
+        overlayClose: true,		
+        escKey: true,
+        arrowKey: true,
+        top: false,
+        bottom: false,
+        left: false,
+        right: false,
+        fixed: false,
+        data: undefined
+    },
+	
+    // Abstracting the HTML and event identifiers for easy rebranding
+    colorbox = 'colorbox',
+    prefix = 'cbox',
+    boxElement = prefix + 'Element',
+    
+    // Events	
+    event_open = prefix + '_open',
+    event_load = prefix + '_load',
+    event_complete = prefix + '_complete',
+    event_cleanup = prefix + '_cleanup',
+    event_closed = prefix + '_closed',
+    event_purge = prefix + '_purge',
+    
+    // Special Handling for IE
+    isIE = $.browser.msie && !$.support.opacity, // Detects IE6,7,8.  IE9 supports opacity.  Feature detection alone gave a false positive on at least one phone browser and on some development versions of Chrome, hence the user-agent test.
+    isIE6 = isIE && $.browser.version < 7,
+    event_ie6 = prefix + '_IE6',
+    
+    // Cached jQuery Object Variables
+    $overlay,
+    $box,
+    $wrap,
+    $content,
+    $topBorder,
+    $leftBorder,
+    $rightBorder,
+    $bottomBorder,
+    $related,
+    $window,
+    $loaded,
+    $loadingBay,
+    $loadingOverlay,
+    $title,
+    $current,
+    $slideshow,
+    $next,
+    $prev,
+    $close,
+    $groupControls,
+    
+    // Variables for cached values or use across multiple functions
+    settings,
+    interfaceHeight,
+    interfaceWidth,
+    loadedHeight,
+    loadedWidth,
+    element,
+    index,
+    photo,
+    open,
+    active,
+    closing,
+    loadingTimer,
+    publicMethod,
+    div = "div";
+
+	// ****************
+	// HELPER FUNCTIONS
+	// ****************
+    
+	// Convience function for creating new jQuery objects
+    function $tag(tag, id, css) {
+        var element = document.createElement(tag);
+        
+        if (id) {
+            element.id = prefix + id;
+        }
+        
+        if (css) {
+            element.style.cssText = css;
+        }
+        
+        return $(element);
+    }
+
+	// Determine the next and previous members in a group.
+	function getIndex(increment) {
+		var 
+		max = $related.length, 
+		newIndex = (index + increment) % max;
+		
+		return (newIndex < 0) ? max + newIndex : newIndex;
+	}
+
+	// Convert '%' and 'px' values to integers
+	function setSize(size, dimension) {
+		return Math.round((/%/.test(size) ? ((dimension === 'x' ? $window.width() : $window.height()) / 100) : 1) * parseInt(size, 10));
+	}
+	
+	// Checks an href to see if it is a photo.
+	// There is a force photo option (photo: true) for hrefs that cannot be matched by this regex.
+	function isImage(url) {
+		return settings.photo || /\.(gif|png|jpe?g|bmp|ico)((#|\?).*)?$/i.test(url);
+	}
+	
+	// Assigns function results to their respective properties
+	function makeSettings() {
+        var i;
+        settings = $.extend({}, $.data(element, colorbox));
+        
+		for (i in settings) {
+			if ($.isFunction(settings[i]) && i.slice(0, 2) !== 'on') { // checks to make sure the function isn't one of the callbacks, they will be handled at the appropriate time.
+			    settings[i] = settings[i].call(element);
+			}
+		}
+        
+		settings.rel = settings.rel || element.rel || 'nofollow';
+		settings.href = settings.href || $(element).attr('href');
+		settings.title = settings.title || element.title;
+        
+        if (typeof settings.href === "string") {
+            settings.href = $.trim(settings.href);
+        }
+	}
+
+	function trigger(event, callback) {
+		$.event.trigger(event);
+		if (callback) {
+			callback.call(element);
+		}
+	}
+
+	// Slideshow functionality
+	function slideshow() {
+		var
+		timeOut,
+		className = prefix + "Slideshow_",
+		click = "click." + prefix,
+		start,
+		stop,
+		clear;
+		
+		if (settings.slideshow && $related[1]) {
+			start = function () {
+				$slideshow
+					.text(settings.slideshowStop)
+					.unbind(click)
+					.bind(event_complete, function () {
+						if (index < $related.length - 1 || settings.loop) {
+							timeOut = setTimeout(publicMethod.next, settings.slideshowSpeed);
+						}
+					})
+					.bind(event_load, function () {
+						clearTimeout(timeOut);
+					})
+					.one(click + ' ' + event_cleanup, stop);
+				$box.removeClass(className + "off").addClass(className + "on");
+				timeOut = setTimeout(publicMethod.next, settings.slideshowSpeed);
+			};
+			
+			stop = function () {
+				clearTimeout(timeOut);
+				$slideshow
+					.text(settings.slideshowStart)
+					.unbind([event_complete, event_load, event_cleanup, click].join(' '))
+					.one(click, function () {
+						publicMethod.next();
+						start();
+					});
+				$box.removeClass(className + "on").addClass(className + "off");
+			};
+			
+			if (settings.slideshowAuto) {
+				start();
+			} else {
+				stop();
+			}
+		} else {
+            $box.removeClass(className + "off " + className + "on");
+        }
+	}
+
+	function launch(target) {
+		if (!closing) {
+			
+			element = target;
+			
+			makeSettings();
+			
+			$related = $(element);
+			
+			index = 0;
+			
+			if (settings.rel !== 'nofollow') {
+				$related = $('.' + boxElement).filter(function () {
+					var relRelated = $.data(this, colorbox).rel || this.rel;
+					return (relRelated === settings.rel);
+				});
+				index = $related.index(element);
+				
+				// Check direct calls to ColorBox.
+				if (index === -1) {
+					$related = $related.add(element);
+					index = $related.length - 1;
+				}
+			}
+			
+			if (!open) {
+				open = active = true; // Prevents the page-change action from queuing up if the visitor holds down the left or right keys.
+				
+				$box.show();
+				
+				if (settings.returnFocus) {
+					try {
+						element.blur();
+						$(element).one(event_closed, function () {
+							try {
+								this.focus();
+							} catch (e) {
+								// do nothing
+							}
+						});
+					} catch (e) {
+						// do nothing
+					}
+				}
+				
+				// +settings.opacity avoids a problem in IE when using non-zero-prefixed-string-values, like '.5'
+				$overlay.css({"opacity": +settings.opacity, "cursor": settings.overlayClose ? "pointer" : "auto"}).show();
+				
+				// Opens inital empty ColorBox prior to content being loaded.
+				settings.w = setSize(settings.initialWidth, 'x');
+				settings.h = setSize(settings.initialHeight, 'y');
+				publicMethod.position();
+				
+				if (isIE6) {
+					$window.bind('resize.' + event_ie6 + ' scroll.' + event_ie6, function () {
+						$overlay.css({width: $window.width(), height: $window.height(), top: $window.scrollTop(), left: $window.scrollLeft()});
+					}).trigger('resize.' + event_ie6);
+				}
+				
+				trigger(event_open, settings.onOpen);
+				
+				$groupControls.add($title).hide();
+				
+				$close.html(settings.close).show();
+			}
+			
+			publicMethod.load(true);
+		}
+	}
+
+	// ****************
+	// PUBLIC FUNCTIONS
+	// Usage format: $.fn.colorbox.close();
+	// Usage from within an iframe: parent.$.fn.colorbox.close();
+	// ****************
+	
+	publicMethod = $.fn[colorbox] = $[colorbox] = function (options, callback) {
+		var $this = this;
+		
+        options = options || {};
+        
+		publicMethod.init();
+		
+		if (!$this[0]) {
+			if ($this.selector) { // if a selector was given and it didn't match any elements, go ahead and exit.
+                return $this;
+            }
+            // if no selector was given (ie. $.colorbox()), create a temporary element to work with
+			$this = $('<a/>');
+			options.open = true; // assume an immediate open
+		}
+		
+		if (callback) {
+			options.onComplete = callback;
+		}
+		
+		$this.each(function () {
+			$.data(this, colorbox, $.extend({}, $.data(this, colorbox) || defaults, options));
+			$(this).addClass(boxElement);
+		});
+		
+        if (($.isFunction(options.open) && options.open.call($this)) || options.open) {
+			launch($this[0]);
+		}
+        
+		return $this;
+	};
+
+	// Initialize ColorBox: store common calculations, preload the interface graphics, append the html.
+	// This preps ColorBox for a speedy open when clicked, and minimizes the burdon on the browser by only
+	// having to run once, instead of each time colorbox is opened.
+	publicMethod.init = function () {
+		if (!$box) {
+			
+			// If the body is not present yet, wait for DOM ready
+			if (!$('body')[0]) {
+				$(publicMethod.init);
+				return;
+			}
+			
+			// Create the markup and append to BODY
+			$window = $(window);
+			$box = $tag(div).attr({id: colorbox, 'class': isIE ? prefix + (isIE6 ? 'IE6' : 'IE') : ''});
+			$overlay = $tag(div, "Overlay", isIE6 ? 'position:absolute' : '').hide();
+			$wrap = $tag(div, "Wrapper");
+			$content = $tag(div, "Content").append(
+				$loaded = $tag(div, "LoadedContent", 'width:0; height:0; overflow:hidden'),
+				$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic")),
+				$title = $tag(div, "Title"),
+				$current = $tag(div, "Current"),
+				$next = $tag(div, "Next"),
+				$prev = $tag(div, "Previous"),
+				$slideshow = $tag(div, "Slideshow").bind(event_open, slideshow),
+				$close = $tag(div, "Close")
+			);
+			
+			$wrap.append( // The 3x3 Grid that makes up ColorBox
+				$tag(div).append(
+					$tag(div, "TopLeft"),
+					$topBorder = $tag(div, "TopCenter"),
+					$tag(div, "TopRight")
+				),
+				$tag(div, false, 'clear:left').append(
+					$leftBorder = $tag(div, "MiddleLeft"),
+					$content,
+					$rightBorder = $tag(div, "MiddleRight")
+				),
+				$tag(div, false, 'clear:left').append(
+					$tag(div, "BottomLeft"),
+					$bottomBorder = $tag(div, "BottomCenter"),
+					$tag(div, "BottomRight")
+				)
+			).find('div div').css({'float': 'left'});
+			
+			$loadingBay = $tag(div, false, 'position:absolute; width:9999px; visibility:hidden; display:none');
+			
+			$('body').prepend($overlay, $box.append($wrap, $loadingBay));
+			
+			// Cache values needed for size calculations
+			interfaceHeight = $topBorder.height() + $bottomBorder.height() + $content.outerHeight(true) - $content.height();//Subtraction needed for IE6
+			interfaceWidth = $leftBorder.width() + $rightBorder.width() + $content.outerWidth(true) - $content.width();
+			loadedHeight = $loaded.outerHeight(true);
+			loadedWidth = $loaded.outerWidth(true);
+			
+			// Setting padding to remove the need to do size conversions during the animation step.
+			$box.css({"padding-bottom": interfaceHeight, "padding-right": interfaceWidth}).hide();
+			
+			// Setup button events.
+			// Anonymous functions here keep the public method from being cached, thereby allowing them to be redefined on the fly.
+			$next.click(function () {
+				publicMethod.next();
+			});
+			$prev.click(function () {
+				publicMethod.prev();
+			});
+			$close.click(function () {
+				publicMethod.close();
+			});
+			
+			$groupControls = $next.add($prev).add($current).add($slideshow);
+			
+			$overlay.click(function () {
+				if (settings.overlayClose) {
+					publicMethod.close();
+				}
+			});
+			
+			// Set Navigation Key Bindings
+			$(document).bind('keydown.' + prefix, function (e) {
+				var key = e.keyCode;
+				if (open && settings.escKey && key === 27) {
+					e.preventDefault();
+					publicMethod.close();
+				}
+				if (open && settings.arrowKey && $related[1]) {
+					if (key === 37) {
+						e.preventDefault();
+						$prev.click();
+					} else if (key === 39) {
+						e.preventDefault();
+						$next.click();
+					}
+				}
+			});
+		}
+	};
+	
+	publicMethod.remove = function () {
+		$box.add($overlay).remove();
+		$box = null;
+		$('.' + boxElement).removeData(colorbox).removeClass(boxElement);
+	};
+
+	publicMethod.position = function (speed, loadedCallback) {
+        var top = 0, left = 0, offset = $box.offset();
+        
+        $window.unbind('resize.' + prefix);
+
+        // remove the modal so that it doesn't influence the document width/height        
+        $box.css({top: -99999, left: -99999});
+
+        if (settings.fixed && !isIE6) {
+            $box.css({position: 'fixed'});
+        } else {
+            top = $window.scrollTop();
+            left = $window.scrollLeft();
+            $box.css({position: 'absolute'});
+        }
+
+		// keeps the top and left positions within the browser's viewport.
+        if (settings.right !== false) {
+            left += Math.max($window.width() - settings.w - loadedWidth - interfaceWidth - setSize(settings.right, 'x'), 0);
+        } else if (settings.left !== false) {
+            left += setSize(settings.left, 'x');
+        } else {
+            left += Math.round(Math.max($window.width() - settings.w - loadedWidth - interfaceWidth, 0) / 2);
+        }
+        
+        if (settings.bottom !== false) {
+            top += Math.max($window.height() - settings.h - loadedHeight - interfaceHeight - setSize(settings.bottom, 'y'), 0);
+        } else if (settings.top !== false) {
+            top += setSize(settings.top, 'y');
+        } else {
+            top += Math.round(Math.max($window.height() - settings.h - loadedHeight - interfaceHeight, 0) / 2);
+        }
+        
+        $box.css({top: offset.top, left: offset.left});
+        
+		// setting the speed to 0 to reduce the delay between same-sized content.
+		speed = ($box.width() === settings.w + loadedWidth && $box.height() === settings.h + loadedHeight) ? 0 : speed || 0;
+        
+		// this gives the wrapper plenty of breathing room so it's floated contents can move around smoothly,
+		// but it has to be shrank down around the size of div#colorbox when it's done.  If not,
+		// it can invoke an obscure IE bug when using iframes.
+		$wrap[0].style.width = $wrap[0].style.height = "9999px";
+		
+		function modalDimensions(that) {
+			// loading overlay height has to be explicitly set for IE6.
+			$topBorder[0].style.width = $bottomBorder[0].style.width = $content[0].style.width = that.style.width;
+			$loadingOverlay[0].style.height = $loadingOverlay[1].style.height = $content[0].style.height = $leftBorder[0].style.height = $rightBorder[0].style.height = that.style.height;
+		}
+		
+		$box.dequeue().animate({width: settings.w + loadedWidth, height: settings.h + loadedHeight, top: top, left: left}, {
+			duration: speed,
+			complete: function () {
+				modalDimensions(this);
+				
+				active = false;
+				
+				// shrink the wrapper down to exactly the size of colorbox to avoid a bug in IE's iframe implementation.
+				$wrap[0].style.width = (settings.w + loadedWidth + interfaceWidth) + "px";
+				$wrap[0].style.height = (settings.h + loadedHeight + interfaceHeight) + "px";
+				
+				if (loadedCallback) {
+					loadedCallback();
+				}
+                
+                setTimeout(function () {  // small delay before binding onresize due to an IE8 bug.
+                    $window.bind('resize.' + prefix, publicMethod.position);
+                }, 1);
+			},
+			step: function () {
+				modalDimensions(this);
+			}
+		});
+	};
+
+	publicMethod.resize = function (options) {
+		if (open) {
+			options = options || {};
+			
+			if (options.width) {
+				settings.w = setSize(options.width, 'x') - loadedWidth - interfaceWidth;
+			}
+			if (options.innerWidth) {
+				settings.w = setSize(options.innerWidth, 'x');
+			}
+			$loaded.css({width: settings.w});
+			
+			if (options.height) {
+				settings.h = setSize(options.height, 'y') - loadedHeight - interfaceHeight;
+			}
+			if (options.innerHeight) {
+				settings.h = setSize(options.innerHeight, 'y');
+			}
+			if (!options.innerHeight && !options.height) {
+				$loaded.css({height: "auto"});
+				settings.h = $loaded.height();
+			}
+			$loaded.css({height: settings.h});
+			
+			publicMethod.position(settings.transition === "none" ? 0 : settings.speed);
+		}
+	};
+
+	publicMethod.prep = function (object) {
+		if (!open) {
+			return;
+		}
+		
+		var callback, speed = settings.transition === "none" ? 0 : settings.speed;
+		
+		$loaded.remove();
+		$loaded = $tag(div, 'LoadedContent').append(object);
+		
+		function getWidth() {
+			settings.w = settings.w || $loaded.width();
+			settings.w = settings.mw && settings.mw < settings.w ? settings.mw : settings.w;
+			return settings.w;
+		}
+		function getHeight() {
+			settings.h = settings.h || $loaded.height();
+			settings.h = settings.mh && settings.mh < settings.h ? settings.mh : settings.h;
+			return settings.h;
+		}
+		
+		$loaded.hide()
+		.appendTo($loadingBay.show())// content has to be appended to the DOM for accurate size calculations.
+		.css({width: getWidth(), overflow: settings.scrolling ? 'auto' : 'hidden'})
+		.css({height: getHeight()})// sets the height independently from the width in case the new width influences the value of height.
+		.prependTo($content);
+		
+		$loadingBay.hide();
+		
+		// floating the IMG removes the bottom line-height and fixed a problem where IE miscalculates the width of the parent element as 100% of the document width.
+		//$(photo).css({'float': 'none', marginLeft: 'auto', marginRight: 'auto'});
+		
+        $(photo).css({'float': 'none'});
+        
+		// Hides SELECT elements in IE6 because they would otherwise sit on top of the overlay.
+		if (isIE6) {
+			$('select').not($box.find('select')).filter(function () {
+				return this.style.visibility !== 'hidden';
+			}).css({'visibility': 'hidden'}).one(event_cleanup, function () {
+				this.style.visibility = 'inherit';
+			});
+		}
+		
+		callback = function () {
+            var preload, i, total = $related.length, iframe, frameBorder = 'frameBorder', allowTransparency = 'allowTransparency', complete, src, img;
+            
+            if (!open) {
+                return;
+            }
+            
+            function removeFilter() {
+                if (isIE) {
+                    $box[0].style.removeAttribute('filter');
+                }
+            }
+            
+            complete = function () {
+                clearTimeout(loadingTimer);
+                $loadingOverlay.hide();
+                trigger(event_complete, settings.onComplete);
+            };
+            
+            if (isIE) {
+                //This fadeIn helps the bicubic resampling to kick-in.
+                if (photo) {
+                    $loaded.fadeIn(100);
+                }
+            }
+            
+            $title.html(settings.title).add($loaded).show();
+            
+            if (total > 1) { // handle grouping
+                if (typeof settings.current === "string") {
+                    $current.html(settings.current.replace('{current}', index + 1).replace('{total}', total)).show();
+                }
+                
+                $next[(settings.loop || index < total - 1) ? "show" : "hide"]().html(settings.next);
+                $prev[(settings.loop || index) ? "show" : "hide"]().html(settings.previous);
+				
+                if (settings.slideshow) {
+                    $slideshow.show();
+                }
+				
+                // Preloads images within a rel group
+                if (settings.preloading) {
+					preload = [
+						getIndex(-1),
+						getIndex(1)
+					];
+					while ((i = $related[preload.pop()])) {
+						src = $.data(i, colorbox).href || i.href;
+						if ($.isFunction(src)) {
+							src = src.call(i);
+						}
+						if (isImage(src)) {
+							img = new Image();
+							img.src = src;
+						}
+					}
+                }
+            } else {
+                $groupControls.hide();
+            }
+            
+            if (settings.iframe) {
+                iframe = $tag('iframe')[0];
+                
+                if (frameBorder in iframe) {
+                    iframe[frameBorder] = 0;
+                }
+                if (allowTransparency in iframe) {
+                    iframe[allowTransparency] = "true";
+                }
+                // give the iframe a unique name to prevent caching
+                iframe.name = prefix + (+new Date());
+                if (settings.fastIframe) {
+                    complete();
+                } else {
+                    $(iframe).one('load', complete);
+                }
+                iframe.src = settings.href;
+                if (!settings.scrolling) {
+                    iframe.scrolling = "no";
+                }
+                $(iframe).addClass(prefix + 'Iframe').appendTo($loaded).one(event_purge, function () {
+                    iframe.src = "//about:blank";
+                });
+            } else {
+                complete();
+            }
+            
+            if (settings.transition === 'fade') {
+                $box.fadeTo(speed, 1, removeFilter);
+            } else {
+                removeFilter();
+            }
+		};
+		
+		if (settings.transition === 'fade') {
+			$box.fadeTo(speed, 0, function () {
+				publicMethod.position(0, callback);
+			});
+		} else {
+			publicMethod.position(speed, callback);
+		}
+	};
+
+	publicMethod.load = function (launched) {
+		var href, setResize, prep = publicMethod.prep;
+		
+		active = true;
+		
+		photo = false;
+		
+		element = $related[index];
+		
+		if (!launched) {
+			makeSettings();
+		}
+		
+		trigger(event_purge);
+		
+		trigger(event_load, settings.onLoad);
+		
+		settings.h = settings.height ?
+				setSize(settings.height, 'y') - loadedHeight - interfaceHeight :
+				settings.innerHeight && setSize(settings.innerHeight, 'y');
+		
+		settings.w = settings.width ?
+				setSize(settings.width, 'x') - loadedWidth - interfaceWidth :
+				settings.innerWidth && setSize(settings.innerWidth, 'x');
+		
+		// Sets the minimum dimensions for use in image scaling
+		settings.mw = settings.w;
+		settings.mh = settings.h;
+		
+		// Re-evaluate the minimum width and height based on maxWidth and maxHeight values.
+		// If the width or height exceed the maxWidth or maxHeight, use the maximum values instead.
+		if (settings.maxWidth) {
+			settings.mw = setSize(settings.maxWidth, 'x') - loadedWidth - interfaceWidth;
+			settings.mw = settings.w && settings.w < settings.mw ? settings.w : settings.mw;
+		}
+		if (settings.maxHeight) {
+			settings.mh = setSize(settings.maxHeight, 'y') - loadedHeight - interfaceHeight;
+			settings.mh = settings.h && settings.h < settings.mh ? settings.h : settings.mh;
+		}
+		
+		href = settings.href;
+		
+        loadingTimer = setTimeout(function () {
+            $loadingOverlay.show();
+        }, 100);
+        
+		if (settings.inline) {
+			// Inserts an empty placeholder where inline content is being pulled from.
+			// An event is bound to put inline content back when ColorBox closes or loads new content.
+			$tag(div).hide().insertBefore($(href)[0]).one(event_purge, function () {
+				$(this).replaceWith($loaded.children());
+			});
+			prep($(href));
+		} else if (settings.iframe) {
+			// IFrame element won't be added to the DOM until it is ready to be displayed,
+			// to avoid problems with DOM-ready JS that might be trying to run in that iframe.
+			prep(" ");
+		} else if (settings.html) {
+			prep(settings.html);
+		} else if (isImage(href)) {
+			$(photo = new Image())
+			.addClass(prefix + 'Photo')
+			.error(function () {
+				settings.title = false;
+				prep($tag(div, 'Error').text('This image could not be loaded'));
+			})
+			.load(function () {
+				var percent;
+				photo.onload = null; //stops animated gifs from firing the onload repeatedly.
+				
+				if (settings.scalePhotos) {
+					setResize = function () {
+						photo.height -= photo.height * percent;
+						photo.width -= photo.width * percent;	
+					};
+					if (settings.mw && photo.width > settings.mw) {
+						percent = (photo.width - settings.mw) / photo.width;
+						setResize();
+					}
+					if (settings.mh && photo.height > settings.mh) {
+						percent = (photo.height - settings.mh) / photo.height;
+						setResize();
+					}
+				}
+				
+				if (settings.h) {
+					photo.style.marginTop = Math.max(settings.h - photo.height, 0) / 2 + 'px';
+				}
+				
+				if ($related[1] && (index < $related.length - 1 || settings.loop)) {
+					photo.style.cursor = 'pointer';
+					photo.onclick = function () {
+                        publicMethod.next();
+                    };
+				}
+				
+				if (isIE) {
+					photo.style.msInterpolationMode = 'bicubic';
+				}
+				
+				setTimeout(function () { // A pause because Chrome will sometimes report a 0 by 0 size otherwise.
+					prep(photo);
+				}, 1);
+			});
+			
+			setTimeout(function () { // A pause because Opera 10.6+ will sometimes not run the onload function otherwise.
+				photo.src = href;
+			}, 1);
+		} else if (href) {
+			$loadingBay.load(href, settings.data, function (data, status, xhr) {
+				prep(status === 'error' ? $tag(div, 'Error').text('Request unsuccessful: ' + xhr.statusText) : $(this).contents());
+			});
+		}
+	};
+        
+	// Navigates to the next page/image in a set.
+	publicMethod.next = function () {
+		if (!active && $related[1] && (index < $related.length - 1 || settings.loop)) {
+			index = getIndex(1);
+			publicMethod.load();
+		}
+	};
+	
+	publicMethod.prev = function () {
+		if (!active && $related[1] && (index || settings.loop)) {
+			index = getIndex(-1);
+			publicMethod.load();
+		}
+	};
+
+	// Note: to use this within an iframe use the following format: parent.$.fn.colorbox.close();
+	publicMethod.close = function () {
+		if (open && !closing) {
+			
+			closing = true;
+			
+			open = false;
+			
+			trigger(event_cleanup, settings.onCleanup);
+			
+			$window.unbind('.' + prefix + ' .' + event_ie6);
+			
+			$overlay.fadeTo(200, 0);
+			
+			$box.stop().fadeTo(300, 0, function () {
+                 
+				$box.add($overlay).css({'opacity': 1, cursor: 'auto'}).hide();
+				
+				trigger(event_purge);
+				
+				$loaded.remove();
+				
+				setTimeout(function () {
+					closing = false;
+					trigger(event_closed, settings.onClosed);
+				}, 1);
+			});
+		}
+	};
+
+	// A method for fetching the current element ColorBox is referencing.
+	// returns a jQuery object.
+	publicMethod.element = function () {
+		return $(element);
+	};
+
+	publicMethod.settings = defaults;
+    
+	// Bind the live event before DOM-ready for maximum performance in IE6 & 7.
+	$('.' + boxElement, document).live('click', function (e) {
+        // ignore non-left-mouse-clicks and clicks modified with ctrl / command, shift, or alt.
+        // See: http://jacklmoore.com/notes/click-events/
+        if (!(e.which > 1 || e.shiftKey || e.altKey || e.metaKey)) {
+            e.preventDefault();
+            launch(this);
+        }
+    });
+
+	// Setup ColorBox
+	publicMethod.init();
+
+}(jQuery, document, this));
+//-->
+</script>
+
+<script type="text/javascript">
+	   $(document).ready(
+	        function(){
+				$('ul#slides').innerfade({
+					speed: 1000,
+					timeout: 5000,
+					type: 'sequence',
+					containerheight: '500px'
+			});
+			$(".gallery").colorbox({rel:'gallery'});
+		});
+</script>
+
+<style type="text/css" style="display:none">/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+</style>
+
+<style type="text/css" style="display:none">/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:url(http://canoeeconfinacreek.net/css/../images/overlay.png) repeat 0 0;}
+#colorbox{}
+    #cboxTopLeft{width:21px; height:21px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -101px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -130px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -101px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -130px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(http://canoeeconfinacreek.net/css/../images/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(http://canoeeconfinacreek.net/css/../images/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff; overflow:hidden;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left:0; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -75px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious:hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -50px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext:hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(http://canoeeconfinacreek.net/css/../images/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(http://canoeeconfinacreek.net/css/../images/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(http://canoeeconfinacreek.net/css/../images/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose:hover{background-position:-25px -25px;}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+/*
+  The following provides PNG transparency support for IE6
+  Feel free to remove this and the /ie6/ directory if you have dropped IE6 support.
+*/
+.cboxIE6 #cboxTopLeft{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderTopLeft.png);}
+.cboxIE6 #cboxTopCenter{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderTopCenter.png);}
+.cboxIE6 #cboxTopRight{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderTopRight.png);}
+.cboxIE6 #cboxBottomLeft{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderBottomLeft.png);}
+.cboxIE6 #cboxBottomCenter{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderBottomCenter.png);}
+.cboxIE6 #cboxBottomRight{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderBottomRight.png);}
+.cboxIE6 #cboxMiddleLeft{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderMiddleLeft.png);}
+.cboxIE6 #cboxMiddleRight{background:url(http://canoeeconfinacreek.net/css/../images/ie6/borderMiddleRight.png);}
+
+.cboxIE6 #cboxTopLeft,
+.cboxIE6 #cboxTopCenter,
+.cboxIE6 #cboxTopRight,
+.cboxIE6 #cboxBottomLeft,
+.cboxIE6 #cboxBottomCenter,
+.cboxIE6 #cboxBottomRight,
+.cboxIE6 #cboxMiddleLeft,
+.cboxIE6 #cboxMiddleRight {
+    _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
+}
+
+</style>
+
+<style type="text/css" style="display:none">@charset "utf-8";
+/* CSS Document */
+
+html, body { background: #000000 url(http://canoeeconfinacreek.net/css/../images/bg-body.jpg) center top no-repeat; font-size: 18px; }
+
+h1 { font-size: 26px; }
+h3 { font-size: 22px; }
+h4 { font-size: 20px; }
+
+#wrapper { margin: 0 auto; padding-top: 150px; width: 960px; }
+
+#content { background: url(http://canoeeconfinacreek.net/css/../images/content.png) repeat-y; }
+
+#facebook { float: right; }
+
+#photo-slides { overflow: hidden; height: 500px; }
+ul#slides{ margin: 0 auto; padding: 0; width: 940px; }
+ul#slides li { list-style: none; }
+
+#video { margin: 20px 70px; border: 3px solid #C90; width: 450px; height: 370px; }
+
+#footer { padding: 10px; color: #fff; text-align: center; font-size: 12px; }
+
+.menu { text-align: center; }
+
+.style-01 { 
+	margin: 0 2px;
+	padding: 20px;
+	background: url(http://canoeeconfinacreek.net/css/../images/bg-001.jpg) repeat-x bottom;
+	font-weight: bold; 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+    color:#063; 
+	text-align: center; 
+	border-bottom: 1px solid #999; 
+}
+
+.style-02 {
+	float: left; 
+	width: 620px;
+	padding: 10px;
+	text-align: justify;	
+}
+
+.style-02 h1 { margin: 15px; text-align: center; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; color:#C00; }
+
+.style-03 {
+	margin-left: 630px;
+	padding: 10px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.style-03 ul { margin-left: 20px; }
+
+.style-03 li {
+	list-style: disc;
+	color: #063;
+}
+
+.style-04 {
+	margin: 10px 5px;
+	margin-left: 640px;
+	padding: 10px 0;
+	background: #f5edd6;
+	text-align: center; 
+	border: 2px dashed #C90;
+}
+
+.style-04 h3 { color: #F00; text-transform: uppercase; font-weight: bold; }
+
+.style-04 h4 { margin: 10px 0; font-weight: bold; }
+
+.style-05 { text-align: center; }
+.style-05 img { margin: 5px; border: 1px solid #666; }
+</style>
+
+</head>
+
+<body><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="padding-bottom: 42px; padding-right: 42px; display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>
+<div id="wrapper">
+  <div id="header"></div>
+  <div><img src="./Econfina Creek Canoe Livery_files/content-top.png" width="960" height="10"></div>
+  <div id="content">
+    <div id="photo-slides">
+      <ul id="slides" class="innerfade" style="position: relative; height: 500px;">
+          <li style="z-index: 4; position: absolute; display: list-item; opacity: 0.467037;"><img src="./Econfina Creek Canoe Livery_files/slide_1-01.jpg" width="940" height="500"></li>
+          <li style="z-index: 3; position: absolute; display: list-item; opacity: 0.532963;"><img src="./Econfina Creek Canoe Livery_files/slide_1-02.jpg" width="940" height="500"></li>
+          <li style="z-index: 2; position: absolute; display: none;"><img src="./Econfina Creek Canoe Livery_files/slide_1-03.jpg" width="940" height="500"></li>
+          <li style="z-index: 1; position: absolute; display: none;"><img src="./Econfina Creek Canoe Livery_files/slide_1-04.jpg" width="940" height="500"></li>
+      </ul>
+    </div>
+    <div>
+    <div class="style-01">
+      <div id="facebook"><a href="http://www.facebook.com/home.php#!/profile.php?id=100001405131017"><img src="./Econfina Creek Canoe Livery_files/facebook.gif" width="115" height="42"></a></div>
+      <h1>"Florida's Most Beautiful Canoe Trail"</h1>
+    </div>
+    
+    
+      <div class="style-02">
+      <p>Spend 3 to 3 ½ hours leisurely paddling. Add your recreation time and tell us how you want to spend the day. Swim and snorkel in crystal clear, sandy bottomed springs. Bring a picinic and make a day of it. Enjoy lush tropical vegetation, unique honeycomb limestone banks, and six major spring areas which combine to make this Florida's Most Beautiful Canoe Trail! Here are a few items to remember to bring on your next adventure: food, plenty to drink, sunscreen, hat, sunglasses, water proof watch, cash and insect repellent.</p>
+        <h1>Great Family Fun!</h1>
+        <div id="video">
+          <object width="450" height="370">
+            <param name="movie" value="http://www.youtube.com/v/yAhmgXrMHsk&amp;rel=0">
+            <param name="wmode" value="transparent"> 
+            <param name="allowfullscreen" value="true">
+            <param name="allowscriptaccess" value="always"><embed wmode="transparent" src="http://www.youtube.com/v/yAhmgXrMHsk&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="450" height="370">
+            </object>
+        </div><!-- /#video -->
+      </div><!-- .style-02 -->
+  <div class="style-04">
+          <h3>Open 7 days a week</h3>
+          <h2>May 1st - Sept 30th</h2>
+          <p style="font-size: 14px;">By Appointment Only: Oct 1st - April 30th</p>
+        <h4>Call For Reservations and Info.</h4>
+          <h3>850-722-9032</h3>
+  </div><!-- .style-04 -->
+      <div class="menu"><a href="http://canoeeconfinacreek.net/rates.html"><img src="./Econfina Creek Canoe Livery_files/menu-01.jpg" width="300" height="60"></a></div><!-- /.menu -->
+      <div class="menu">
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-01.jpg" title=""><img src="./Econfina Creek Canoe Livery_files/menu-02.jpg" width="300" height="60"></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-02.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-03.jpg" title=""></a>    
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-04.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-05.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-06.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-07.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-08.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-09.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-10.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-11.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-12.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-13.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-14.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-15.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-16.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-17.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-18.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-19.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-20.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-21.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-22.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-23.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-24.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-25.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-26.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-27.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-28.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-29.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-30.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-31.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-32.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-33.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-34.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-35.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-36.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-37.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-38.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-39.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-40.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-41.jpg" title=""></a>
+        <a class="gallery cboxElement" href="http://canoeeconfinacreek.net/photos/photo-42.jpg" title=""></a>
+      </div><!-- /.menu -->
+      <div class="style-03">
+      <ul>
+        <li>We pick you up at the end of the trip and bring you back to your vehicle.</li>
+        <li>Shuttle service is available for people with there own vessels.</li>
+        <li>We have one and two person kayaks.</li>
+        <li>No pets allowed.</li>
+        <li>Cash only, no personal checks or credit cards.</li>
+        <li>One drivers license or picture I.D. required for each vessel rented.</li>
+      </ul>
+        <div class="style-05"><a href="http://www.paddleflausa.com/"><img src="./Econfina Creek Canoe Livery_files/flpaddleassoc.jpg" width="100" height="100"></a><a href="http://www.propaddle.com/"><img style="margin-bottom: 12px;" src="./Econfina Creek Canoe Livery_files/propaddleassoc.jpg" width="176" height="75"></a></div>
+      </div><!-- .style-03 -->
+        <div style="clear: both;"></div>
+    </div>
+  </div>
+  <div><img src="./Econfina Creek Canoe Livery_files/content-bot.png" width="960" height="10"></div>
+  <div id="footer">© 2011 - Econfina Creek Canoe Livery</div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65265508-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body></html>
